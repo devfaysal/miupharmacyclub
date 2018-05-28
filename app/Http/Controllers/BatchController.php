@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Batch;
 use Illuminate\Http\Request;
+use Session;
 
 class BatchController extends Controller
 {
@@ -14,7 +15,8 @@ class BatchController extends Controller
      */
     public function index()
     {
-        //
+        $batches = Batch::all();
+        return view('manage.batch.index')->withBatches($batches);
     }
 
     /**
@@ -24,7 +26,7 @@ class BatchController extends Controller
      */
     public function create()
     {
-        //
+        return view('manage.batch.create');
     }
 
     /**
@@ -35,7 +37,17 @@ class BatchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $batch = new Batch;
+
+        $batch->year = $request->year;
+        $batch->name = $request->name;
+        $batch->save();
+
+        Session::flash('message', 'Batch Ids added successfully!'); 
+        Session::flash('alert-class', 'alert-success');
+
+        return redirect()->route('batch.index');
+
     }
 
     /**

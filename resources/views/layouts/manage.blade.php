@@ -71,7 +71,26 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container-fluid">
+                <div class="row">
+                    <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('students')}}">All students</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('studentId.index')}}">Student ID</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('batch.index')}}">Batch</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
