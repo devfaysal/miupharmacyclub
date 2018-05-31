@@ -11,15 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::post('/take-me-home', 'HomeController@takeMeHome')->name('takeMeHome');
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::prefix('manage')->middleware('role:superadministrator')->group(function(){
     Route::get('/', 'ManageController@index')->name('manage.dashboard');
@@ -31,3 +25,5 @@ Route::prefix('manage')->middleware('role:superadministrator')->group(function()
 
     Route::resource('/batch', 'BatchController');
 });
+
+Route::resource('/profile', 'ProfileController');

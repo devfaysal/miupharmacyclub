@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\StudentId;
+use App\User;
 use Session;
 
 class HomeController extends Controller
@@ -15,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('takeMeHome');
+        $this->middleware('auth');
     }
 
     /**
@@ -25,18 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
-
-    public function takeMeHome(Request $request)
-    {
-        if(StudentId::where('number', '=', $request->studentId)->exists()){
-            return redirect()->route('home');
-        }else{
-            Session::flash('message', 'Provided ID is not valid!'); 
-            Session::flash('alert-class', 'alert-danger');
-            return redirect()->back();
-        }
-
+        $users = User::whereRoleIs('user')->get();
+        return view('home')->withUsers($users);
     }
 }
