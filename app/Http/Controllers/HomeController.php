@@ -26,7 +26,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::whereRoleIs('user')->get();
+        $users = User::whereRoleIs('user')->orderBY('batch')->get()->groupBy('batch');
+
+        // echo '<pre>';
+        // print_r($users);
+        // echo '</pre>';
+        // foreach($users as $user){
+        //     echo $user[0]->batch .'<br/><br/>';
+        //     foreach ($user as $u){
+        //         echo $u->name .'<br/><br/>';
+        //     }
+        // }
+        // exit();
         return view('home')->withUsers($users);
     }
 }

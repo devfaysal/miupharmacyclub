@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="card text-white bg-success mb-3">
+            <div class="card mb-3">
                 <div class="card-header">
                     <h1 class="text-center">Update Information</h1>
                 </div>

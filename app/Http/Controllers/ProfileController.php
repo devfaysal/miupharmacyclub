@@ -35,8 +35,11 @@ class ProfileController extends Controller
      * @param  \App\User  $profile
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($profile)
     {
+        if($profile != auth()->user()->student_id){
+            return abort(404);
+        }
         return view ('profile.edit');
     }
 
@@ -60,9 +63,22 @@ class ProfileController extends Controller
 
         $user->save();
 
-        Session::flash('message', 'Profile successfully!'); 
+        Session::flash('message', 'Profile Updated successfully!'); 
         Session::flash('alert-class', 'alert-success');
 
         return redirect()->route('profile.index');
+    }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\user  $batch
+     * @return \Illuminate\Http\Response
+     */
+    public function show($profile)
+    {
+        $user = User::where('student_id', '=', $profile)->first();
+        return view('profile.show')->withUser($user);
     }
 }
