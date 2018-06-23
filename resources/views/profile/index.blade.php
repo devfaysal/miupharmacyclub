@@ -47,7 +47,9 @@
                             </table>
                         </div>
                         <div class="col-md-6">
-                            <img class="img-thumbnail rounded-circle" src="{{ asset('images/placeholder.png') }}" alt="">
+                            <div class="text-center">
+                                <img style="max-width:300px;" class="img-thumbnail rounded-circle" src="{{ asset('images/placeholder.png') }}" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
