@@ -29,8 +29,12 @@
                             <label for="batch" class="col-md-4 col-form-label text-md-right">{{ __('Batch') }}</label>
 
                             <div class="col-md-6">
-                                <input id="batch" type="text" class="form-control{{ $errors->has('batch') ? ' is-invalid' : '' }}" name="batch" value="{{ old('batch') }}" required>
-
+                                <select id="batch" class="form-control {{ $errors->has('batch') ? ' is-invalid' : '' }}" name="batch" required>
+                                    <option value="">--Select Batch--</option>
+                                    @foreach ($batches as $batch)
+                                        <option value="{{$batch->name}}" {{$batch->name == old('batch') ? 'selected':''}}>{{$batch->name}}</option>
+                                    @endforeach
+                                </select>
                                 @if ($errors->has('batch'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('batch') }}</strong>

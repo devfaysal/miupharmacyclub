@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Batch;
 use Session;
 
 class ProfileController extends Controller
@@ -40,7 +41,8 @@ class ProfileController extends Controller
         if($profile != auth()->user()->student_id){
             return abort(404);
         }
-        return view ('profile.edit');
+        $batches = Batch::all();
+        return view ('profile.edit')->withBatches($batches);
     }
 
     /**

@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Batch;
 
 class RegisterController extends Controller
 {
@@ -21,6 +22,17 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        $batches = Batch::all();
+        return view('auth.register')->withBatches($batches);
+    }
 
     /**
      * Where to redirect users after registration.

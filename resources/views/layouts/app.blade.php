@@ -78,6 +78,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <footer>
+            <p class="text-center">Developed with <span style="color:blue; font-size: 20px;">&#10084;</span> by <a target="_blank" href="http://faysal.me">Faysal Ahamed</a></p>
+        </footer>
     </div>
 </body>
 </html>
