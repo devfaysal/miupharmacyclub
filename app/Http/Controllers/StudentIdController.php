@@ -50,7 +50,7 @@ class StudentIdController extends Controller
         Session::flash('message', 'Student Ids added successfully!'); 
         Session::flash('alert-class', 'alert-success');
 
-        return redirect()->route('studentId.index');
+        return redirect()->route('student-id.index');
     }
 
     /**
@@ -72,7 +72,7 @@ class StudentIdController extends Controller
      */
     public function edit(StudentId $studentId)
     {
-        //
+        return view('manage.studentId.edit')->withStudentId($studentId);
     }
 
     /**
@@ -84,7 +84,13 @@ class StudentIdController extends Controller
      */
     public function update(Request $request, StudentId $studentId)
     {
-        //
+        $studentId->number = $request->number;
+        $studentId->save();
+
+        Session::flash('message', 'Student Ids updated successfully!'); 
+        Session::flash('alert-class', 'alert-success');
+
+        return redirect()->route('student-id.index');
     }
 
     /**

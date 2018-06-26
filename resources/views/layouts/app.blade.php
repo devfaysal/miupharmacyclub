@@ -53,7 +53,7 @@
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         @if (Auth::user()->hasRole('superadministrator'))
                                             <a class="dropdown-item" href="{{route('students')}}">All students</a>
-                                            <a class="dropdown-item" href="{{route('studentId.index')}}">Student ID</a>
+                                            <a class="dropdown-item" href="{{route('student-id.index')}}">Student ID</a>
                                             <a class="dropdown-item" href="{{route('batch.index')}}">Batch</a>
                                         @endif
                                     </div>

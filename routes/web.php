@@ -19,9 +19,7 @@ Route::prefix('manage')->middleware('role:superadministrator')->group(function()
     Route::get('/', 'ManageController@index')->name('manage.dashboard');
     Route::get('/students', 'ManageController@students')->name('students');
 
-    Route::get('/student-id', 'StudentIdController@index')->name('studentId.index');
-    Route::get('/student-id/create', 'StudentIdController@create')->name('studentId.create');
-    Route::post('/student-id', 'StudentIdController@store')->name('studentId.store');
+    Route::resource('/student-id', 'StudentIdController');
 
     Route::resource('/batch', 'BatchController');
 });

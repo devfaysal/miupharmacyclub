@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">{{ __('Bulk Add Student Id') }}</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('studentId.store') }}">
+                        <form method="POST" action="{{ route('student-id.store') }}">
                             {{csrf_field()}}
 
                             <div class="form-group row">
