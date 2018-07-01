@@ -47,7 +47,7 @@
                             <label for="student_id" class="col-md-4 col-form-label text-md-right">{{ __('Student ID') }}</label>
 
                             <div class="col-md-6">
-                                <input id="student_id" type="text" class="form-control{{ $errors->has('student_id') ? ' is-invalid' : '' }}" name="student_id" value="{{ old('student_id') }}" required>
+                                <input id="student_id" type="text" class="form-control{{ $errors->has('student_id') ? ' is-invalid' : '' }}" name="student_id" value="{{ old('student_id') }}" placeholder="0812BPM00282" required>
 
                                 @if ($errors->has('student_id'))
                                     <span class="invalid-feedback">

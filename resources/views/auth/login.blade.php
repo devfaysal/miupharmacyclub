@@ -5,21 +5,21 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">{{ __('Login to access') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         {{csrf_field()}}
 
                         <div class="form-group row">
-                            <label for="username" class="col-sm-4 col-form-label text-md-right">{{ __('University ID') }}</label>
+                            <label for="student_id" class="col-sm-4 col-form-label text-md-right">{{ __('University ID') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="student_id" value="{{ old('username') }}" required autofocus>
+                                <input id="student_id" type="text" class="form-control{{ $errors->has('student_id') ? ' is-invalid' : '' }}" name="student_id" value="{{ old('username') }}" required autofocus>
 
-                                @if ($errors->has('username'))
+                                @if ($errors->has('student_id'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('username') }}</strong>
+                                        <strong>{{ $errors->first('student_id') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -57,6 +57,14 @@
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
+                                </a>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                Not Registered yet?<a class="btn btn-link" href="{{ route('register') }}">
+                                    {{ __('Register Now') }}
                                 </a>
                             </div>
                         </div>
