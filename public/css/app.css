@@ -10412,13 +10412,18 @@ a.text-dark:focus {
 }
 
 main {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  background: url(/images/bg-pattern.png), -webkit-gradient(linear, right top, left top, from(#7e6f86), to(#a05e62));
+  background: url(/images/bg-pattern.png), linear-gradient(to left, #7e6f86, #a05e62);
 }
 
 .sidebar {
@@ -10432,5 +10437,15 @@ main {
   overflow-y: auto;
   /* Scrollable contents if viewport is shorter than content. */
   border-right: 1px solid #eee;
+}
+
+.nav-link {
+  margin: 2px 5px;
+  color: #fff !important;
+}
+
+.card-box-shadow {
+  -webkit-box-shadow: 15px 15px 50px 0px black;
+  box-shadow: 15px 15px 50px 0px black;
 }
 

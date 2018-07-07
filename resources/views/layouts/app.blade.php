@@ -41,8 +41,8 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                            <li><a class="nav-link btn btn-success" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                            <li><a class="nav-link btn btn-info" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
                             @if (Auth::user()->hasRole('superadministrator'))
                             <li class="nav-item dropdown">
@@ -59,8 +59,8 @@
                                     </div>
                                 </li>
                             @endif
-                            <li><a class="nav-link" href="{{route('profile.index')}}">{{ Auth::user()->name }}</a></li>
-                            <li><a class="nav-link" href="{{ route('logout') }}"
+                            <li><a class="nav-link btn btn-success" href="{{route('profile.index')}}">{{ Auth::user()->name }}</a></li>
+                            <li><a class="nav-link btn btn-secondary" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -79,7 +79,7 @@
             @yield('content')
         </main>
         <footer>
-            <p class="text-center">Developed with <span style="color:blue; font-size: 20px;">&#10084;</span> by <a target="_blank" href="http://faysal.me">Faysal Ahamed</a></p>
+            <p style="color:#fff;" class="text-center">Developed with <span style="color:#fff; font-size: 20px;">&#10084;</span> by <a style="color:#fff;" target="_blank" href="http://faysal.me">Faysal Ahamed</a></p>
         </footer>
     </div>
 </body>

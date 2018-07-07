@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="card mb-3">
+            <div class="card mb-3 card-box-shadow">
                 <div class="card-header">
                     <h1>{{$user->name}}</h1>
                 </div>

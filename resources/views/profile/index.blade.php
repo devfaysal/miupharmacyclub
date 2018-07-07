@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="card mb-3">
+            <div class="card mb-3 card-box-shadow">
                 <div class="card-header text-center">
                     <h1>Hello {{Auth::user()->name}}</h1>
                     <a class="btn btn-info" href="{{route('profile.edit', Auth::user()->student_id)}}">Edit Profile</a>
