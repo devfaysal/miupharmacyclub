@@ -15,7 +15,7 @@ class BatchController extends Controller
      */
     public function index()
     {
-        $batches = Batch::all();
+        $batches = Batch::orderBy('name')->get();
         return view('manage.batch.index')->withBatches($batches);
     }
 

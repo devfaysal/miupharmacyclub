@@ -30,7 +30,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        $batches = Batch::all();
+        $batches = Batch::orderBy('name')->get();
         return view('auth.register')->withBatches($batches);
     }
 
