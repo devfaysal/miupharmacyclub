@@ -13,7 +13,9 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@welcome')->name('welcome');
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('manage')->middleware('role:superadministrator')->group(function(){
     Route::get('/', 'ManageController@index')->name('manage.dashboard');

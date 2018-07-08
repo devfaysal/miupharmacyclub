@@ -5,9 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-box-shadow">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header text-center text-white bg-info display-4">{{ __('Register') }}</div>
 
                 <div class="card-body">
+                    <h4 class="text-center">If you face any problem in registration, please send me a message in facebook <a target="_blank" href="https://www.facebook.com/miufaysal">fb.com/miufaysal</a></h4>
+                    <br/>
                     <form method="POST" action="{{ route('register') }}">
                         {{csrf_field()}}
 
@@ -137,7 +139,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-info">
                                     {{ __('Register') }}
                                 </button>
                             </div>
