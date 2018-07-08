@@ -8,7 +8,7 @@
                 <div class="card-header text-center text-white bg-info display-4">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <h4 class="text-center">If you face any problem in registration, please send me a message in facebook <a target="_blank" href="https://www.facebook.com/miufaysal">fb.com/miufaysal</a></h4>
+                    <h4 class="text-center text-danger">If you face any problem in registration, please send me a message in facebook <a target="_blank" href="https://www.facebook.com/miufaysal">fb.com/miufaysal</a></h4>
                     <br/>
                     <form method="POST" action="{{ route('register') }}">
                         {{csrf_field()}}
