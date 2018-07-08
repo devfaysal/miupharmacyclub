@@ -10,11 +10,11 @@
                 <div class="card">
                     <div class="card-header">{{ __('Students') }}</div>
                     <div class="card-body">
-                        <ul>
+                        <ol>
                             @foreach ($users as $user)
                                 <li>{{$user->name}}</li>
                             @endforeach
-                        </ul>
+                        </ol>
                     </div>
                 </div>
             </div>

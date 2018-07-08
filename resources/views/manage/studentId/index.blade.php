@@ -11,11 +11,11 @@
                 <div class="card">
                     <div class="card-header">{{ __('Student Ids') }}</div>
                     <div class="card-body">
-                        <ul>
+                        <ol>
                             @foreach ($ids as $id)
                                 <li>{{$id->number}} <a href="{{route('student-id.edit', $id->id)}}">Edit</a></li>
                             @endforeach
-                        </ul>
+                        </ol>
                     </div>
                 </div>
             </div>

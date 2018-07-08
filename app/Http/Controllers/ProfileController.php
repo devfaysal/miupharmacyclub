@@ -41,7 +41,7 @@ class ProfileController extends Controller
         if($profile != auth()->user()->student_id){
             return abort(404);
         }
-        $batches = Batch::all();
+        $batches = Batch::orderBy('name')->get();
         return view ('profile.edit')->withBatches($batches);
     }
 

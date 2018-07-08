@@ -11,11 +11,11 @@
                 <div class="card">
                     <div class="card-header">{{ __('Batches') }}</div>
                     <div class="card-body">
-                        <ul>
+                        <ol>
                             @foreach ($batches as $batch)
                                 <li>{{$batch->name}}</li>
                             @endforeach
-                        </ul>
+                        </ol>
                     </div>
                 </div>
             </div>
