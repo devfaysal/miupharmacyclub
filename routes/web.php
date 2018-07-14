@@ -20,6 +20,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('manage')->middleware('role:superadministrator')->group(function(){
     Route::get('/', 'ManageController@index')->name('manage.dashboard');
     Route::get('/students', 'ManageController@students')->name('students');
+    Route::get('/students/{id}', 'ManageController@showStudent')->name('student.show');
+
+    Route::resource('/admin', 'AdminController')->except('destroy');
 
     Route::resource('/student-id', 'StudentIdController');
 

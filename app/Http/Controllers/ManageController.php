@@ -14,6 +14,13 @@ class ManageController extends Controller
     public function students(){
         $users = User::whereRoleIs('user')->get();
 
-        return view('manage.student.index')->withusers($users);
+        return view('manage.student.index')->withUsers($users);
     }
+
+    public function showStudent($id){
+        $user = User::where('id', '=', $id)->first();
+
+        return view('manage.student.show')->withUser($user);
+    }
+
 }

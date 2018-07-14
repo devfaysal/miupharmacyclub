@@ -41,8 +41,8 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a class="nav-link btn btn-success" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                            <li><a class="nav-link btn btn-info" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                            <li><a class="nav-link btn btn-success" href="{{ route('login') }}"><i class="fas fa-user"></i> {{ __('Login') }}</a></li>
+                            <li><a class="nav-link btn btn-info" href="{{ route('register') }}"><i class="fas fa-user-plus"></i> {{ __('Register') }}</a></li>
                         @else
                             @if (Auth::user()->hasRole('superadministrator'))
                             <li class="nav-item dropdown">
@@ -55,15 +55,17 @@
                                             <a class="dropdown-item" href="{{route('students')}}">All students</a>
                                             <a class="dropdown-item" href="{{route('student-id.index')}}">Student ID</a>
                                             <a class="dropdown-item" href="{{route('batch.index')}}">Batch</a>
+                                            <a class="dropdown-item" href="{{route('admin.index')}}">Manage Admin</a>
                                         @endif
                                     </div>
                                 </li>
                             @endif
-                            <li><a class="nav-link btn btn-success" href="{{route('profile.index')}}">{{ Auth::user()->name }}</a></li>
+                            <li><a class="nav-link btn btn-info" href="{{route('home')}}"><i class="fas fa-users"></i> {{ __('All Members') }}</a></li>
+                            <li><a class="nav-link btn btn-success" href="{{route('profile.index')}}"><i class="fas fa-user"></i> {{ Auth::user()->name }}</a></li>
                             <li><a class="nav-link btn btn-secondary" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                                <i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}
                             </a></li>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
