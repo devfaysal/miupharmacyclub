@@ -21,7 +21,7 @@ class HomeController extends Controller
 
 
     public function welcome(){
-        $users = User::all();
+        $users = User::whereRoleIs('user')->get();
         $batches = User::distinct()->get(['batch'])->count();
         $studentid = StudentId::count();
         return view('welcome')->withUsers($users)->withStudentid($studentid)->withBatches($batches);
