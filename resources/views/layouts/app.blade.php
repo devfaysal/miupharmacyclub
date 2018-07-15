@@ -56,6 +56,7 @@
                                             <a class="dropdown-item" href="{{route('student-id.index')}}">Student ID</a>
                                             <a class="dropdown-item" href="{{route('batch.index')}}">Batch</a>
                                             <a class="dropdown-item" href="{{route('admin.index')}}">Manage Admin</a>
+                                            <a class="dropdown-item" href="{{route('donation.index')}}">Manage Donation</a>
                                         @endif
                                     </div>
                                 </li>
