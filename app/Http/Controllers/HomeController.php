@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\StudentId;
 use App\User;
+use App\Donation;
 use Session;
 
 class HomeController extends Controller
@@ -37,5 +38,10 @@ class HomeController extends Controller
         $users = User::whereRoleIs('user')->orderBY('batch')->get()->groupBy('batch');
 
         return view('home')->withUsers($users);
+    }
+
+    public function donorList(){
+        $donations = Donation::all();
+        return view('donor')->withDonations($donations);
     }
 }

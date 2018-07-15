@@ -17,6 +17,8 @@ Route::get('/', 'HomeController@welcome')->name('welcome');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/donor/list', 'HomeController@donorList')->name('donor.list');
+
 Route::prefix('manage')->middleware('role:superadministrator')->group(function(){
     Route::get('/', 'ManageController@index')->name('manage.dashboard');
     Route::get('/students', 'ManageController@students')->name('students');
@@ -24,9 +26,12 @@ Route::prefix('manage')->middleware('role:superadministrator')->group(function()
 
     Route::resource('/admin', 'AdminController')->except('destroy');
 
-    Route::resource('/student-id', 'StudentIdController');
+    Route::resource('/student-id', 'StudentIdController')->except('destroy');
 
-    Route::resource('/batch', 'BatchController');
+    Route::resource('/batch', 'BatchController')->except('destroy');
+
+    Route::resource('/donation', 'DonationController')->except('destroy');
 });
 
-Route::resource('/profile', 'ProfileController');
+Route::resource('/profile', 'ProfileController')->except('destroy');
+
