@@ -9,7 +9,7 @@
                     <h1 class="text-center">Update Information</h1>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('profile.update', Auth::user()->student_id) }}">
+                    <form method="POST" action="{{ route('profile.update', Auth::user()->student_id) }}" enctype="multipart/form-data">
                         {{csrf_field()}}
                         {{ method_field('PATCH') }}
                         <div class="form-group row">
@@ -114,6 +114,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
+                            <div class="col-md-6">
+                                <input onchange="previewFile()" id="image" type="file" class="form-control-file{{ $errors->has('image') ? ' is-invalid' : '' }}" name="image">
+                                <p class="text-danger">To get best view, upload a square size image and must be less than 250KB</p>
+                                <img style="width: 100px;" src="{{Auth::user()->image != '' ? asset('storage/'.Auth::user()->image) :  asset('images/placeholder.png')}}" class="img-thumbnail" height="">
+                                @if ($errors->has('image'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('image') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-info">
@@ -128,4 +142,23 @@
         </div>
     </div>
 </div>
+@endsection
+@section('javascript')
+    <script>
+        function previewFile() {
+            var preview = document.querySelector('img');
+            var file    = document.querySelector('input[type=file]').files[0];
+            var reader  = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>
 @endsection

@@ -88,5 +88,7 @@
             <p style="color:#fff;" class="text-center">Developed with <span style="color:#fff; font-size: 20px;">&#10084;</span> by <a style="color:#fff;" target="_blank" href="http://faysal.me">Faysal Ahamed</a></p>
         </footer>
     </div>
+    <!-- Javascript For Page-->
+    @yield('javascript')
 </body>
 </html>

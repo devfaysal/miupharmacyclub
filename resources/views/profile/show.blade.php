@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="text-center">
-                                <img style="max-width:300px;" class="img-thumbnail rounded-circle" src="{{ asset('images/placeholder.png') }}" alt="">
+                                <img style="max-width:300px;" class="img-thumbnail rounded-circle" src="{{ $user->image != '' ? asset('storage/'.$user->image) :  asset('images/placeholder.png') }}" alt="">
                             </div>
                         </div>
                     </div>

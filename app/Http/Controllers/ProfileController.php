@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Batch;
 use Session;
+use Image; /* https://github.com/Intervention/image */
+use Storage;
 
 class ProfileController extends Controller
 {
@@ -56,6 +58,30 @@ class ProfileController extends Controller
     {
         $user = auth()->user();
 
+        if($request->file('image')){
+            $this->validate($request, [
+                'image' => 'image|max:250',
+            ]);
+            
+            $image_basename = explode('.',$request->file('image')->getClientOriginalName())[0];
+            $image = $image_basename . '-' . time() . '.' . $request->file('image')->getClientOriginalExtension();
+
+            $img = Image::make($request->file('image')->getRealPath());
+            $img->stream();
+
+            //Upload image
+            Storage::disk('local')->put('public/'.$image, $img);
+
+            //Remove if there was any old image
+            if($user->image != ''){
+                Storage::disk('local')->delete('public/'.$user->image);
+            }
+
+            //add new image path to database
+            $user->image = $image;
+            
+        }
+        
         $user->name = $request->name;
         $user->batch = $request->batch;
         $user->email = $request->email;
