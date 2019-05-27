@@ -10,7 +10,7 @@
         "intervention/image": "^2.4",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "~1.0",
-        "santigarcor/laratrust": "5.1.*"
+        "santigarcor/laratrust": "5.2.*"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
