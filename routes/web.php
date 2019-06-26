@@ -35,3 +35,9 @@ Route::prefix('manage')->middleware('role:superadministrator')->group(function()
 
 Route::resource('/profile', 'ProfileController')->except('destroy');
 
+
+Route::get('/test', function(){
+    $batches = App\Batch::orderBy('name')->get();
+    return view('test')->withBatches($batches);
+});
+
