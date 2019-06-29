@@ -38,6 +38,8 @@ Route::resource('/profile', 'ProfileController')->except('destroy');
 
 Route::get('/test', function(){
     $batches = App\Batch::orderBy('name')->get();
-    return view('test')->withBatches($batches);
+    return view('v2.test', [
+        'batches' => $batches
+    ]);
 });
 

@@ -1,77 +1,44 @@
-@extends('layouts.app')
-
+@extends('v2.layouts.app')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card card-box-shadow">
-                <div class="card-header text-center text-white bg-success display-4">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        {{csrf_field()}}
-
-                        <div class="form-group row">
-                            <label for="student_id" class="col-sm-4 col-form-label text-md-right">{{ __('University ID') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="student_id" type="text" class="form-control{{ $errors->has('student_id') ? ' is-invalid' : '' }}" name="student_id" value="{{ old('username') }}" required autofocus>
-
-                                @if ($errors->has('student_id'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('student_id') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-success">
-                                    {{ __('Login') }}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                        </div>
-                        <br/>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                Not Registered yet?<a class="btn btn-link" href="{{ route('register') }}">
-                                    {{ __('Register Now') }}
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <div class="w-full max-w-sm mx-auto mt-3">
+        <form method="POST" action="{{ route('login') }}" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="pb-3">
+                <p class="text-center text-3xl text-gray-700 font-semibold">Login</p>
+            </div>
+            @csrf
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="student_id">
+                    University ID
+                </label>
+                <input class="miu-input" value="{{old('student_id')}}" id="student_id" name="student_id" type="text" required autofocus>
+                @if ($errors->has('student_id'))
+                    <span class="text-red-500 text-sm">
+                        <strong>{{ $errors->first('student_id') }}</strong>
+                    </span>
+                @endif
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    Password
+                </label>
+                <input class="miu-input" id="password" name="password" type="password" required>
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="miu-button" type="submit">
+                    Login
+                </button>
+                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="{{ route('password.request') }}">
+                    Forgot Password?
+                </a>
+            </div>
+        </form>
+        <div class="border border-gray-400 rounded px-8 pt-2 pb-4 mb-4">
+            <div class="flex items-center mt-3">
+                <p class="mr-2">Not Registered yet?</p> 
+                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="{{ route('register') }}">
+                    Register Now
+                </a>
             </div>
         </div>
     </div>
-</div>
 @endsection
