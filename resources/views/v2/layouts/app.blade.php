@@ -21,7 +21,7 @@
     <div class="bg-white border-b-2 border-gray-400">
         <nav class="flex items-center justify-between flex-wrap container p-2">
             <div class="flex items-center flex-shrink-0 text-gray-700 mr-6">
-                <span class="font-semibold text-xl tracking-tight">MIU Pharmacy Club</span>
+                <a href="/" class="font-semibold text-xl tracking-tight">MIU Pharmacy Club</a>
             </div>
             <div class="block lg:hidden">
                 <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-600 border-gray-600 hover:text-gray-800 hover:border-gray-900">
@@ -41,7 +41,15 @@
                     </a>
                 </div>
                 <div class="py-2">
-                    <a href="/login" class="miu-button">Login</a>
+                    @guest
+                        <a href="/login" class="miu-button">Login</a>
+                    @else
+                        <a href="{{ route('logout') }}" class="miu-button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @endguest
                 </div>
             </div>
         </nav>

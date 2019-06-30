@@ -1,57 +1,23 @@
-@extends('layouts.app')
+@extends('v2.layouts.app')
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card mb-3 card-box-shadow">
-                <div class="card-header">
-                    <h1>{{$user->name}}</h1>
-                </div>
-                @if(Session::has('message'))
-                    <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-                @endif
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <table class="table table-bordered">
-                                <tr>
-                                    <td>Name: </td>
-                                    <td>{{$user->name}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Batch: </td>
-                                    <td>{{$user->batch}}</td>
-                                </tr>
-                                <tr>
-                                    <td>ID: </td>
-                                    <td>{{$user->student_id}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Email: </td>
-                                    <td>{{$user->email}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Phone: </td>
-                                    <td>{{$user->phone}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Current Organization: </td>
-                                    <td>{{$user->current_organization}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Designation: </td>
-                                    <td>{{$user->designation}}</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="text-center">
-                                <img style="max-width:300px;" class="img-thumbnail rounded-circle" src="{{ $user->image != '' ? asset('storage/'.$user->image) :  asset('images/placeholder.png') }}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="bg-white mt-3 md:flex max-w-sm md:max-w-4xl mx-auto rounded overflow-hidden shadow-lg">
+        <img class="w-full md:w-1/3" src="{{ $user->image != '' ? asset('storage/'.$user->image) :  asset('images/placeholder.png') }}" alt="{{$user->name}}">
+        <div class="w-full md:w-2/3 px-6 py-4">
+            <div class="font-bold text-xl mb-4 text-center">{{$user->name}}</div>
+            <div>
+                <p class="text-gray-700 text-base border-b py-2"><span class="font-semibold w-32 inline-block">Batch:</span> {{$user->batch}}</p>
+                <p class="text-gray-700 text-base border-b py-2"><span class="font-semibold w-32 inline-block">ID:</span> {{$user->student_id}}</p>
+                <p class="text-gray-700 text-base border-b py-2"><span class="font-semibold w-32 inline-block">Email:</span> {{$user->email}}</p>
+                <p class="text-gray-700 text-base border-b py-2"><span class="font-semibold w-32 inline-block">Phone:</span> {{$user->phone}}</p>
+                <p class="text-gray-700 text-base border-b py-2"><span class="font-semibold w-32 inline-block">Organization:</span> {{$user->current_organization}}</p>
+                <p class="text-gray-700 text-base border-b py-2"><span class="font-semibold w-32 inline-block">Designation:</span> {{$user->designation}}</p>
+            </div>
+            <div class="py-4">
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#photography</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#travel</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#winter</span>
             </div>
         </div>
     </div>
