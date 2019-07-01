@@ -9,10 +9,10 @@
                     <div class="max-w-sm rounded overflow-hidden shadow pt-3">
                         <img class="h-16 w-16 md:h-40 md:w-40 border-8 rounded-full mx-auto" src="https://tailwindcss.com/img/card-top.jpg" alt="Profile Image">
                         <div class="px-6 py-4 text-center">
-                            <div class="font-bold text-xl mb-1">{{Auth::user()->name}}</div>
+                            <div class="font-bold text-xl mb-1"><a href="{{route('profile.show', Auth::user()->student_id)}}">{{Auth::user()->name}}</a></div>
                             <p class="text-gray-700 text-sm">{{Auth::user()->designation}}, {{Auth::user()->current_organization}}</p>
                             <p class="text-gray-700 text-xs mt-2">Last Visit: {{date('d-M-Y')}}</p>
-                            <a href="" class="w-40 mx-auto my-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold block py-1 border border-gray-400 rounded shadow">View Profile</a>
+                            <a href="{{route('profile.show', Auth::user()->student_id)}}" class="w-40 mx-auto my-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold block py-1 border border-gray-400 rounded shadow">View Profile</a>
                         </div>
                     </div>
                 </div>

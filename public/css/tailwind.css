@@ -7657,6 +7657,24 @@ video {
   background-color: #f7fafc;
 }
 
+.miu-button-sm {
+  background-color: #fff;
+  color: #4a5568;
+  font-weight: 600;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-width: 1px;
+  border-color: #cbd5e0;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.miu-button-sm:hover {
+  background-color: #f7fafc;
+}
+
 @media (min-width: 640px) {
   .sm\:appearance-none {
     -webkit-appearance: none;

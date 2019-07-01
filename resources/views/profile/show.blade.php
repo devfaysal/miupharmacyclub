@@ -5,7 +5,12 @@
     <div class="bg-white mt-3 md:flex max-w-sm md:max-w-4xl mx-auto rounded overflow-hidden shadow-lg">
         <img class="w-full md:w-1/3" src="{{ $user->image != '' ? asset('storage/'.$user->image) :  asset('images/placeholder.png') }}" alt="{{$user->name}}">
         <div class="w-full md:w-2/3 px-6 py-4">
-            <div class="font-bold text-xl mb-4 text-center">{{$user->name}}</div>
+            <div class="mb-4 flex">
+                <h1 class="font-bold text-xl text-center md:text-left">{{$user->name}}</h1>
+                @if(Auth::user()->student_id == $user->student_id)
+                    <a class="inline-block mt-1 ml-3 text-blue-700" href="{{route('profile.edit', Auth::user()->student_id)}}">Edit</a>
+                @endif
+            </div>
             <div>
                 <p class="text-gray-700 text-base border-b py-2"><span class="font-semibold w-32 inline-block">Batch:</span> {{$user->batch}}</p>
                 <p class="text-gray-700 text-base border-b py-2"><span class="font-semibold w-32 inline-block">ID:</span> {{$user->student_id}}</p>
