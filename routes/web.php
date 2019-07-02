@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\DonationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,8 +33,14 @@ Route::prefix('manage')->middleware('role:superadministrator')->group(function()
 
     Route::resource('/batch', 'BatchController')->except('destroy');
 
-    Route::resource('/donation', 'DonationController')->except('destroy');
+    Route::get('/donations/create', [DonationController::class, 'create']);
+
+    Route::post('/donations', [DonationController::class, 'store']);
 });
+
+Route::get('/donations', [DonationController::class, 'index']);
+
+Route::get('/members', [MemberController::class, 'index'])->middleware('auth');
 
 Route::resource('/profile', 'ProfileController')->except('destroy');
 
