@@ -25,7 +25,12 @@ class HomeController extends Controller
         $users = User::whereRoleIs('user')->get();
         $batches = User::distinct()->get(['batch'])->count();
         $studentid = StudentId::count();
-        return view('welcome')->withUsers($users)->withStudentid($studentid)->withBatches($batches);
+        if(auth()->user()){
+            return view('v2.home');
+        }else{
+            return view('welcome')->withUsers($users)->withStudentid($studentid)->withBatches($batches);
+        }
+            
     }
 
     /**

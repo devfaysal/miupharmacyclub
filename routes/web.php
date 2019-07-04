@@ -38,9 +38,11 @@ Route::prefix('manage')->middleware('role:superadministrator')->group(function()
     Route::post('/donations', [DonationController::class, 'store']);
 });
 
-Route::get('/donations', [DonationController::class, 'index']);
+Route::get('/donations', [DonationController::class, 'index'])->name('donation.index');
 
 Route::get('/members', [MemberController::class, 'index'])->middleware('auth');
+
+Route::get('/members/{batch}', [MemberController::class, 'batch'])->middleware('auth');
 
 Route::resource('/profile', 'ProfileController')->except('destroy');
 

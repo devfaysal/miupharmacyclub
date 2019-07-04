@@ -13,6 +13,6 @@ class batch extends Model
 
     public function path()
     {
-        return "/batches/{$this->name}";
+        return "/members/{$this->name}";
     }
 }

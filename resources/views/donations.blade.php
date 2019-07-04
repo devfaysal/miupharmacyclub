@@ -2,13 +2,13 @@
 
 @section('content')
     <div class="container">
-        <div class="w-full md:w-1/2 mx-auto bg-white p-3 mt-3">
-            <h1 class="text-3xl py-3">Donations</h1>
-            <ol>
+        <div class="w-full md:w-1/2 mx-auto">
+            <h1 class="text-gray-800 text-2xl text-center py-4">Donations</h1>
+            <div class="shadow">
                 @foreach ($donations as $donation)
-                    <li> {{$donation->created_at->format('d F Y')}} - {{$donation->donor->name}} - {{$donation->amount}}BDT </li>
+                    <div class="pl-4 py-3 {{$loop->odd ? 'bg-white' : ''}}"> {{$donation->created_at->format('d F Y')}} - {{$donation->donor->name}} - {{$donation->amount}}BDT </div>
                 @endforeach
-            </ol>
+            </div>
         </div>
     </div>
 @endsection

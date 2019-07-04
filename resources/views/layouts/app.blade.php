@@ -83,9 +83,9 @@
         </main>
         <footer>
             @auth
-            <p style="color:#fff; margin-bottom: 0;" class="text-center"><a style="color:#fff;" href="{{route('donor.list')}}">Donor List</a></p>
+            <p style="color:#fff; margin-bottom: 0;" class="text-center"><a style="color:#fff;" href="">Donor List</a></p>
             @endauth
-            <p style="color:#fff;" class="text-center">Developed with <span style="color:#fff; font-size: 20px;">&#10084;</span> by <a style="color:#fff;" target="_blank" href="http://faysal.me">Faysal Ahamed</a></p>
+            {{-- <p style="color:#fff;" class="text-center">Developed with <span style="color:#fff; font-size: 20px;">&#10084;</span> by <a style="color:#fff;" target="_blank" href="http://faysal.me">Faysal Ahamed</a></p> --}}
         </footer>
     </div>
     <!-- Javascript For Page-->
