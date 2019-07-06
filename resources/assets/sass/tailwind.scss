@@ -35,3 +35,11 @@
 .miu-button-sm:hover{
     @apply bg-gray-100;
 }
+
+.miu-pagination{
+    @apply bg-white text-gray-700 py-1 px-2 mx-1 border border-gray-400 rounded shadow;
+}
+
+.miu-pagination-active{
+    @apply bg-gray-400;
+}

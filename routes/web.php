@@ -33,6 +33,8 @@ Route::prefix('manage')->middleware('role:superadministrator')->group(function()
 
     Route::resource('/batch', 'BatchController')->except('destroy');
 
+    Route::get('/donations', [DonationController::class, 'index']);
+
     Route::get('/donations/create', [DonationController::class, 'create']);
 
     Route::post('/donations', [DonationController::class, 'store']);

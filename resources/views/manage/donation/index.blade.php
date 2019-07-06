@@ -1,23 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.manage')
 
-@section('content')
+@section('manage')
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <a class="btn btn-primary" href="{{route('donation.create')}}">Add Donation</a>
-                @if(Session::has('message'))
-                    <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-                @endif
-                <div class="card">
-                    <div class="card-header">{{ __('Donations') }}</div>
-                    <div class="card-body">
-                        <ol>
-                            @foreach ($donations as $donation)
-                                <li> {{$donation->created_at->format('d F Y')}} - {{$donation->donor->name}} - {{$donation->amount}}BDT </li>
-                            @endforeach
-                        </ol>
-                    </div>
-                </div>
+        <div class="w-full">
+            <div class="flex flex-wrap justify-center py-4">
+                <h1 class="text-2xl text-gray-700 text-center mr-3">Donations</h1> <a class="miu-button-sm" href="/manage/donations/create">Add Donation</a>
+            </div>
+            <div class="justify-center px-4">
+                @foreach ($donations as $donation)
+                    <div class="pl-4 py-3 {{$loop->odd ? 'bg-white' : ''}}"> {{$donation->created_at->format('d F Y')}} - {{$donation->donor->name}} - {{$donation->amount}}BDT </div>
+                @endforeach
             </div>
         </div>
     </div>

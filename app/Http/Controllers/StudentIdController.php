@@ -15,7 +15,7 @@ class StudentIdController extends Controller
      */
     public function index()
     {
-        $ids = StudentId::orderBy('number')->get();
+        $ids = StudentId::orderBy('number')->paginate(50);
         return view('manage.studentId.index')->withIds($ids);
     }
 

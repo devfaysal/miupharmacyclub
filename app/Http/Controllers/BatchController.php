@@ -43,7 +43,7 @@ class BatchController extends Controller
         $batch->name = $request->name;
         $batch->save();
 
-        Session::flash('message', 'Batch Ids added successfully!'); 
+        Session::flash('message', 'Batch added successfully!'); 
         Session::flash('alert-class', 'alert-success');
 
         return redirect()->route('batch.index');

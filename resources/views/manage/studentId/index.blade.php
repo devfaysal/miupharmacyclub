@@ -1,23 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.manage')
 
-@section('content')
+@section('manage')
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <a class="btn btn-primary" href="{{route('student-id.create')}}">Bulk Add Student ID</a>
-                @if(Session::has('message'))
-                    <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-                @endif
-                <div class="card">
-                    <div class="card-header">{{ __('Student Ids') }}</div>
-                    <div class="card-body">
-                        <ol>
-                            @foreach ($ids as $id)
-                                <li>{{$id->number}} <a href="{{route('student-id.edit', $id->id)}}">Edit</a></li>
-                            @endforeach
-                        </ol>
-                    </div>
-                </div>
+        <div class="w-full">
+            <div class="flex flex-wrap justify-center py-4">
+                <h1 class="text-2xl text-gray-700 text-center mr-3">Available Member Ids</h1> <a class="miu-button-sm" href="/manage/student-id/create">Bulk Add</a>
+            </div>
+            <div class="flex flex-wrap justify-center px-4">
+                @foreach ($ids as $id)
+                    <a href="{{route('student-id.edit', $id->id)}}">
+                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mx-2 my-2">
+                            {{$id->number}}
+                        </span>
+                    </a>
+                @endforeach
+            </div>
+            <div class="py-3">
+                {{ $ids->links('pagination') }}
             </div>
         </div>
     </div>

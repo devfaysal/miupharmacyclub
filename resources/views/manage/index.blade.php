@@ -1,5 +1,5 @@
 @extends('layouts.manage')
 
-@section('content')
-    <h1>Dashboard</h1>
+@section('manage')
+    <h1>Dashboard lorem</h1>
 @endsection

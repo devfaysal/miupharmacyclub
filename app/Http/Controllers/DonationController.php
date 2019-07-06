@@ -17,7 +17,7 @@ class DonationController extends Controller
     public function index()
     {
         $donations = Donation::all();
-        return view('donations')->withDonations($donations);
+        return view('manage.donation.index')->withDonations($donations);
     }
 
     /**
