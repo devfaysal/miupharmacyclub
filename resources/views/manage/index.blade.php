@@ -1,5 +1,5 @@
 @extends('layouts.manage')
 
 @section('manage')
-    <h1>Dashboard lorem</h1>
+    <h1>MIU Pharmacy Club Dashboard</h1>
 @endsection

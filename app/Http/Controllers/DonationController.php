@@ -20,6 +20,12 @@ class DonationController extends Controller
         return view('manage.donation.index')->withDonations($donations);
     }
 
+    public function public()
+    {
+        $donations = Donation::all();
+        return view('donations')->withDonations($donations);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

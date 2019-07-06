@@ -24,7 +24,9 @@ Route::get('/donor/list', 'HomeController@donorList')->name('donor.list');
 
 Route::prefix('manage')->middleware('role:superadministrator')->group(function(){
     Route::get('/', 'ManageController@index')->name('manage.dashboard');
+
     Route::get('/students', 'ManageController@students')->name('students');
+    
     Route::get('/students/{id}', 'ManageController@showStudent')->name('student.show');
 
     Route::resource('/admin', 'AdminController')->except('destroy');
@@ -40,7 +42,7 @@ Route::prefix('manage')->middleware('role:superadministrator')->group(function()
     Route::post('/donations', [DonationController::class, 'store']);
 });
 
-Route::get('/donations', [DonationController::class, 'index'])->name('donation.index');
+Route::get('/donations', [DonationController::class, 'public'])->name('donation.index');
 
 Route::get('/members', [MemberController::class, 'index'])->middleware('auth');
 

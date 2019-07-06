@@ -14,7 +14,13 @@
                             <a class="text-blue-500 hover:text-blue-800" href="/manage/student-id">Student Id</a>
                         </li>
                         <li class="ml-2 mb-2">
-                            <a class="text-blue-500 hover:text-blue-800" href="/manage/donation">Donation</a>
+                            <a class="text-blue-500 hover:text-blue-800" href="/manage/students">Students</a>
+                        </li>
+                        <li class="ml-2 mb-2">
+                            <a class="text-blue-500 hover:text-blue-800" href="/manage/donations">Donation</a>
+                        </li>
+                        <li class="ml-2 mb-2">
+                            <a class="text-blue-500 hover:text-blue-800" href="/manage/admin">Admins</a>
                         </li>
                     </ul>
                 </div>

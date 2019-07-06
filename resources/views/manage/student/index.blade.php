@@ -1,23 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.manage')
 
-@section('content')
+@section('manage')
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                @if(Session::has('message'))
-                    <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-                @endif
-                <div class="card">
-                    <div class="card-header">{{ __('Students') }}</div>
-                    <div class="card-body">
-                        <ol>
-                            @foreach ($users as $user)
-                                <li>{{$user->name}} <a href="{{route('student.show', $user->id)}}">View Details</a></li>
-                            @endforeach
-                        </ol>
-                    </div>
-                </div>
-            </div
+        <div class="w-full">
+            <div class="flex flex-wrap justify-center py-4">
+                <h1 class="text-2xl text-gray-700 text-center mr-3">Students</h1>
+            </div>
+            <div class="justify-center px-4">
+                @foreach ($users as $user)
+                    <div class="pl-4 py-3 {{$loop->odd ? 'bg-white' : ''}}">{{$user->name}} <a class="miu-button-sm" href="{{route('student.show', $user->id)}}">View Details</a></div>
+                @endforeach
+            </div>
         </div>
-    </div>
 @endsection
