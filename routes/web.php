@@ -52,9 +52,10 @@ Route::resource('/profile', 'ProfileController')->except('destroy');
 
 
 Route::get('/test', function(){
-    $batches = App\Batch::orderBy('name')->get();
-    return view('v2.members', [
-        'batches' => $batches
-    ]);
+    echo env('DB_CONNECTION');
+    // $batches = App\Batch::orderBy('name')->get();
+    // return view('v2.members', [
+    //     'batches' => $batches
+    // ]);
 });
 
