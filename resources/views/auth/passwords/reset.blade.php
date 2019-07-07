@@ -1,4 +1,4 @@
-@extends('v2.layouts.app')
+@extends('layouts.app')
 @section('content')
     <div class="w-full max-w-sm mx-auto mt-3">
         <form method="POST" action="{{ route('password.request') }}" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

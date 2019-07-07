@@ -12,7 +12,7 @@ class MemberController extends Controller
     {
         $batches = Batch::orderBy('name')->get();
 
-        return view('v2.members', [
+        return view('members', [
             'batches'   => $batches
         ]);
     }
@@ -21,7 +21,7 @@ class MemberController extends Controller
     {
         $members = User::where('batch', $batch)->get();
 
-        return view('v2.batch', [
+        return view('batch', [
             'members'   => $members,
             'batch'     => $batch
         ]);

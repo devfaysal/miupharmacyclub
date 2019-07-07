@@ -26,7 +26,7 @@ class HomeController extends Controller
         $batches = User::distinct()->get(['batch'])->count();
         $studentid = StudentId::count();
         if(auth()->user()){
-            return view('v2.home');
+            return view('home');
         }else{
             return view('welcome')->withUsers($users)->withStudentid($studentid)->withBatches($batches);
         }
