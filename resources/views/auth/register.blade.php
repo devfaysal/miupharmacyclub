@@ -71,7 +71,7 @@
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
-                    Phone (Option)
+                    Phone (Optional)
                 </label>
                 <input class="miu-input" value="{{old('phone')}}" id="phone" name="phone" type="text">
                 @if ($errors->has('phone'))

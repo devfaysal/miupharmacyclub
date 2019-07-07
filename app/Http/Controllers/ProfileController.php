@@ -58,6 +58,8 @@ class ProfileController extends Controller
     {
         $user = auth()->user();
 
+        //dd($request->all());
+
         if($request->file('image')){
             $this->validate($request, [
                 'image' => 'image|max:250',
@@ -94,7 +96,7 @@ class ProfileController extends Controller
         Session::flash('message', 'Profile Updated successfully!'); 
         Session::flash('alert-class', 'alert-success');
 
-        return redirect()->route('profile.index');
+        return redirect()->route('profile.show', $user->student_id);
     }
 
 
