@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </div>
-                @include('v2.layouts.credit')
+                @include('layouts.credit')
             </div>
             <!-- Left Sidebar End -->
             <!-- Middle Start -->
