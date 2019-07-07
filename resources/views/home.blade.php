@@ -7,7 +7,7 @@
             <div class="w-full md:w-1/4 px-2 mb-3 md:mb-0">
                 <div class="bg-white">
                     <div class="max-w-sm rounded overflow-hidden shadow pt-3">
-                        <img class="h-16 w-16 md:h-40 md:w-40 border-8 rounded-full mx-auto" src="{{ $user->image != '' ? asset('storage/'.$user->image) :  asset('images/placeholder.png') }}" alt="{{$user->name}}">
+                        <img class="h-16 w-16 md:h-40 md:w-40 border-8 rounded-full mx-auto" src="{{ Auth::user()->image != '' ? asset('storage/'.Auth::user()->image) :  asset('images/placeholder.png') }}" alt="{{Auth::user()->name}}">
                         <div class="px-6 py-4 text-center">
                             <div class="font-bold text-xl mb-1"><a href="{{route('profile.show', Auth::user()->student_id)}}">{{Auth::user()->name}}</a></div>
                             <p class="text-gray-700 text-sm">{{Auth::user()->designation}}, {{Auth::user()->current_organization}}</p>
