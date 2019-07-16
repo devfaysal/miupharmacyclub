@@ -3787,10 +3787,10 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
 
-laravel-mix@^4.0.7:
-  version "4.0.16"
-  resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-4.0.16.tgz#449c121021f062f03707bf49d1221d4640760d07"
-  integrity sha512-S4qBneKYL8Vl2VaZ2igcxsrcfSR5lGqi+EeZSA35Jr7N9Btl/+0pplC2CvJHNGdp2j4CPvtdOOtdQsYYNbAYvg==
+laravel-mix@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-4.1.2.tgz#eaf9999f030d2d45614a83457e0ee3b6f243b56d"
+  integrity sha512-nA+JME+59hWI5u+r3VfPfmpUj8CxlNmNsvslBOUtUwRc1K2Wq55uAPUtTLgAp7n5JngF3O7qFN3LcTCVO/SpZQ==
   dependencies:
     "@babel/core" "^7.2.0"
     "@babel/plugin-proposal-object-rest-spread" "^7.2.0"
@@ -3979,6 +3979,11 @@ lodash@^4.17.11, lodash@^4.17.5:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+
+lodash@^4.17.14:
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
+  integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
 
 loglevel@^1.6.3:
   version "1.6.3"
@@ -5716,10 +5721,10 @@ sass-loader@7.*:
     pify "^3.0.0"
     semver "^5.5.0"
 
-sass@^1.22.1:
-  version "1.22.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.22.1.tgz#9dc3cb2ea37d12fec94ef5c0e1112055f23e5bc8"
-  integrity sha512-VsWrNdfIzCLbD2TO2bq9tCaUzEE0UUSGtP3r9IhHi8ypAPCb3FOVP99kMRil+ZROEcTnKReZcQP9vk6ArV2eLw==
+sass@^1.22.5:
+  version "1.22.5"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.22.5.tgz#0436ba64eaad4c9eb523480c141becc330ddd90b"
+  integrity sha512-Z06zPez82QqlQbqvGKMMEs2bBpLUsmFQxd+8wZJedkptMn8jyk+fccMhfUloD8HsfsYw572ca7Be3zbMBsip4A==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
@@ -6208,15 +6213,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-tailwindcss-tables@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/tailwindcss-tables/-/tailwindcss-tables-0.4.0.tgz#1cbe26448251fd6f92ab142bfb165d7b7d0c07e8"
-  integrity sha512-GB25r/03oJln729LcstrPyI53Y5k3X5WWxzAkj+9Zqrw3jB6CXwZm54zIwnQU93dkmXOGGrneldHsIt9Z2YTYQ==
-
-tailwindcss@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.0.4.tgz#98f186c8142bfb292bcbfcb53b84df369f11ef91"
-  integrity sha512-+1NNPW+U83k6DV/uUOnsfmX86Cfb8N87fiuN0cX0mEi2sZUpglLzZqlXtP8FD9Hlne5H1UhlS8tajz+F9SSxjA==
+tailwindcss@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.0.5.tgz#5145fd61f251be06a77748819e12fb126914095d"
+  integrity sha512-e5edrSKqNOvWAVEutXN5czeJSXjQQxO7zNN4RDd5vQF/JTxnKdndcMFIC6p6YkRvcGFKPCZ/0rY1zZvPeq9V4A==
   dependencies:
     autoprefixer "^9.4.5"
     bytes "^3.0.0"
